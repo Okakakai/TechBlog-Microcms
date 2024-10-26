@@ -62,3 +62,6 @@ All commands are run from the root of the project, from a terminal:
 
 #### Github Actions
 - https://zenn.dev/gardenia_710/articles/00264ac9ad0542
+
+#### Cloudflare Pages の設定
+- https://blog.otterlord.dev/posts/hello-from-bun/
