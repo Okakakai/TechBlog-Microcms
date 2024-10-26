@@ -57,3 +57,8 @@ All commands are run from the root of the project, from a terminal:
 
 ### Microcms
 - https://qiita.com/tomy0610/items/f468650e3970bbac6cc0
+
+### Deploy
+
+#### Github Actions
+- https://zenn.dev/gardenia_710/articles/00264ac9ad0542
