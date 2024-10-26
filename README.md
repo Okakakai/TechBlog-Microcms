@@ -66,3 +66,15 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+## 読んだ資料
+
+### Biome
+- https://qiita.com/xrxoxcxox/items/ba60b730377d5037fa7e
+
+### Font
+フォントのダウンロード元
+- https://gwfh.mranftl.com/fonts
+
+フォントに関する Tips
+- https://zenn.dev/mimi/scraps/5c4065425c8339

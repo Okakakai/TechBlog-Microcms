@@ -1,0 +1,31 @@
+---
+import type { Blog } from "../../types/microcms";
+import FormattedDate from "../FormattedDate.astro";
+import "./BlogCard.scss";
+
+type Props = Blog;
+
+const {
+	id,
+	title,
+	eyecatch,
+	publishedAt: _publishedAt,
+	category,
+} = Astro.props;
+
+const publishedAt = new Date(_publishedAt);
+const categoryName = category ? category.name : "ブログ";
+
+---
+<a href={`/blog/${id}`} class="card">
+    <div class="card-image-box">
+        <img class="card-image" src={eyecatch.url} alt={title} />
+    </div>
+    <div class="card-box">
+        <div class="card-header">
+            <span class="card-tag">{categoryName}</span>
+            <FormattedDate date={publishedAt} />
+        </div>
+        <h2 class="card-title">{title}</h2>
+    </div>
+</a>

@@ -1,0 +1,95 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import type { Category } from "../types/microcms";
+
+type Props = {
+    title: string;
+    description: string;
+    category: string;
+}
+
+const { title, description, category } = Astro.props;
+
+---
+
+<html lang="ja">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style lang="scss">
+			@font-face {
+				font-display: swap;
+				font-family: 'Gothic A1';
+				font-style: normal;
+				font-weight: 400;
+				src: url('/fonts/gothic-a1-v13-latin-regular.woff2') format('woff2');
+			}
+			body {
+				line-height: calc(1em* 80 / 40);
+				font-size: 1rem;
+				color: #333;
+				-webkit-text-size-adjust: 100%;
+			}
+			main {
+				width: 100%;
+				background-color: #f6f6f6;
+			}
+			.list-container {
+				width: calc(100% - 3rem);
+				max-width: 800px;
+				margin: auto;
+			}
+            .list-header {
+                padding-top: 2rem;
+                padding-bottom: 1rem;
+
+				@include pc{
+                    width: calc(66.6666666667% + .75rem);
+				}
+				.metaline {
+					.badge {
+                        font-family: My Galano Grotesque, sans-serif;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        line-height: calc(1em* 60 / 40);
+                        padding-bottom: 1rem;
+					}
+				}
+				.title {
+					margin-top: 1rem;
+					font-weight: 800;
+					font-size: calc(1rem* 10 / 9);
+					line-height: calc(1em* 63 / 40);
+					text-align: left;
+					@include pc{
+						font-size: calc(1rem* 10 / 5);
+						line-height: calc(1em* 60 / 40);
+					}
+				}
+                .description {
+                    font-weight: 400;
+                    font-size: calc(1rem* 10 / 11);
+                    line-height: calc(1em* 66 / 40);
+                }
+			}
+		</style>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<div class="list-container">
+                <div class="list-header">
+					<p class="metaline">
+						<span class="badge">{"Category"}</span>
+					</p>
+					<h1 class="title">{category}</h1>
+                    <p class="description">{description}</p>
+				</div>
+                <slot />
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

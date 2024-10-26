@@ -7,8 +7,8 @@ export type Blog = {
 	revisedAt: string;
 	title: string;
 	content: string;
-	eyecatch: string;
-	category: Category;
+	eyecatch: ImageBlock;
+	category?: Category;
 };
 
 export type Category = {
@@ -26,4 +26,10 @@ export type BlogResponse = {
 	offset: number;
 	limit: number;
 	contents: Blog[];
+};
+
+export type ImageBlock = {
+	url: string;
+	width: number;
+	height: number;
 };
