@@ -1,20 +1,17 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import SingleColumnLayout from '../../layouts/blog/SingleColumnLayout.astro';
+import { getBlogDetail, getBlogs } from '../../lib/microcms';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
+	const response = await getBlogs({ fields: ["id"]});
+	return response.contents.map((post) => ({
+		params: { slug: post.id }
 	}));
 }
-type Props = CollectionEntry<'blog'>;
+//記事の詳細情報を取得
+const { slug } = Astro.params;
+const blog = await getBlogDetail(slug as string);
 
-const post = Astro.props;
-const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<SingleColumnLayout {...blog} />
