@@ -10,18 +10,22 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style lang="scss">
-			article {
-				display: flex;
-				flex-direction: column;
-				gap: 1rem;
-			}
+            main {
+                width: 100%;
+                background-color: #f6f6f6;
+            }
+            article {
+                width: calc(100% - 3rem);
+                max-width: 800px;
+                margin: auto;
+            }
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>Okaka_kai</h1>
 			<article>
+				<h1>Okaka_kai</h1>
 				<section>
 					<li>
 						<span>Zenn: </span><a href="https://zenn.dev/okaka_syake">okaka_syake</a>

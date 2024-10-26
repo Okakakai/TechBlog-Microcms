@@ -3,6 +3,7 @@ import type { Blog } from "../../types/microcms";
 import FormattedDate from "../FormattedDate.astro";
 import "./BlogCard.scss";
 
+
 type Props = Blog;
 
 const {
@@ -15,6 +16,7 @@ const {
 
 const publishedAt = new Date(_publishedAt);
 const categoryName = category ? category.name : "ブログ";
+
 
 ---
 <a href={`/blog/${id}`} class="card">

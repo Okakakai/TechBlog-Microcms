@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import type { Category } from "../types/microcms";
+import "the-new-css-reset";
 
 type Props = {
     title: string;
@@ -30,39 +30,47 @@ const { title, description, category } = Astro.props;
 				font-size: 1rem;
 				color: #333;
 				-webkit-text-size-adjust: 100%;
-			}
-			main {
-				width: 100%;
-				background-color: #f6f6f6;
-			}
+			}	
+            main {
+                width: 100%;
+                background-color: #f6f6f6;
+            }
+            article {
+                width: calc(100% - 3rem);
+                max-width: 800px;
+                margin: auto;
+            }
 			.list-container {
 				width: calc(100% - 3rem);
 				max-width: 800px;
 				margin: auto;
 			}
             .list-header {
-                padding-top: 2rem;
-                padding-bottom: 1rem;
-
+                padding-top: 1rem;
 				@include pc{
+                    padding-top: 2rem;
+                    padding-bottom: 1rem;
                     width: calc(66.6666666667% + .75rem);
 				}
 				.metaline {
+                    margin-bottom: 0rem;
 					.badge {
                         font-family: My Galano Grotesque, sans-serif;
                         font-weight: 600;
                         font-size: 1rem;
                         line-height: calc(1em* 60 / 40);
-                        padding-bottom: 1rem;
+                        @include pc {
+                            padding-bottom: 1rem;
+                        }
 					}
 				}
 				.title {
-					margin-top: 1rem;
 					font-weight: 800;
-					font-size: calc(1rem* 10 / 9);
+					font-size: 2rem;
 					line-height: calc(1em* 63 / 40);
 					text-align: left;
 					@include pc{
+                        margin-top: 1rem;
 						font-size: calc(1rem* 10 / 5);
 						line-height: calc(1em* 60 / 40);
 					}
